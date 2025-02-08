@@ -27,13 +27,12 @@ public class InitData implements CommandLineRunner {
             unicodeSet.add(c);
         }
 
-        // Gem alle Unicode-tegn i databasen
-        unicodeSet.forEach(character -> {
-            Unicode entity = new Unicode();
-            entity.setBogstav(character);
-            unicodeRepository.save(entity);
+        unicodeSet.forEach(character -> { //itererer gennem mit set
+            Unicode entity = new Unicode(); //opretter nyt unicode objekt for hvert tegn
+            entity.setBogstav(character); //sætter bogstavet
+            unicodeRepository.save(entity); //gemmer til databasen
         });
 
-        System.out.println("Unicode characters saved in database!");
+        System.out.println("Saved to database succesfully");
     }
 }
