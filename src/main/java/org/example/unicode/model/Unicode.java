@@ -9,9 +9,24 @@ import jakarta.persistence.Id;
 public class Unicode {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
-    int unicode;
-    char bogstav;
+    private int id;
+    private int unicode;
+    private char bogstav;
+    private String description;
+
+    public Unicode(char bogstav) {
+        this.bogstav=bogstav;
+        this.unicode=(int) bogstav;
+        this.description="Bogstav: " + bogstav;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public int getId() {
         return id;

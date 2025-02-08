@@ -28,8 +28,7 @@ public class InitData implements CommandLineRunner {
         }
 
         unicodeSet.forEach(character -> { //itererer gennem mit set
-            Unicode entity = new Unicode(); //opretter nyt unicode objekt for hvert tegn
-            entity.setBogstav(character); //sætter bogstavet
+            Unicode entity = new Unicode(character); //opretter nyt unicode objekt for hvert tegn
             unicodeRepository.save(entity); //gemmer til databasen
         });
 
